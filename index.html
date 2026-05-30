@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+    content="width=device-width, initial-scale=1.0">
+
+    <title>Gestor de Tareas</title>
+
+
+<!-- DASHBOARD PRINCIPAL -->
+
+<div id="sistema"
+class="sistema hidden">
+
+    <!-- BARRA SUPERIOR -->
+
+    <div class="top">
+
+        <h2>Dashboard</h2>
+
+        <button onclick="agregarTarea()">
+            + Nueva Tarea
+        </button>
+
+    </div>
+
+    <div id="sistema" class="sistema hidden">
+
+    <!-- TOP -->
+
+    <div class="top">
+
+        <h2>Dashboard</h2>
+
+        <button onclick="agregarTarea()">
+            + Nueva Tarea
+        </button>
+
+    </div>
+
+    <div class="funciones">
+
+        ...
+    
+    </div>
+
+    <!-- LISTA -->
+
+    <div id="lista"></div>
+
+</div>
+
+    <!-- TARJETAS -->
+
+    <div class="cards">
+
+        <div class="card">
+
+            <h3>Total Tareas</h3>
+
+            <p id="total">0</p>
+
+        </div>
+
+        <div class="card">
+
+            <h3>Pendientes</h3>
+
+            <p id="pendientes">0</p>
+
+        </div>
+
+        <div class="card">
+
+            <h3>Completadas</h3>
+
+            <p id="completadas">0</p>
+
+        </div>
+
+    </div>
+
+    <!-- LISTA -->
+
+    <div id="lista"></div>
+
+</div>
+
+    <style>
+
+        body{
+            font-family:Arial;
+            background:#f2f2f2;
+            margin:0;
+        }
+
+        .login,
+        .sistema{
+
+            padding:20px;
+        }
+
+        .login{
+
+            height:100vh;
+
+            display:flex;
+
+            justify-content:center;
+
+            align-items:center;
+        }
+
+        .caja{
+
+            background:white;
+
+            padding:20px;
+
+            border-radius:10px;
+        }
+
+        input,
+        textarea,
+        button{
+
+            width:100%;
+
+            padding:10px;
+
+            margin-top:10px;
+        }
+
+        .hidden{
+            display:none;
+        }
+
+        .top{
+
+            display:flex;
+
+            justify-content:space-between;
+
+            margin-bottom:20px;
+        }
+
+        .tarea{
+
+            background:white;
+
+            padding:15px;
+
+            margin-bottom:10px;
+
+            border-radius:10px;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+<!-- LOGIN -->
+
+<div id="login" class="login">
+
+    <div class="caja">
+
+        <h2>GESTOR TO-DO</h2>
+
+        <input
+        type="text"
+        placeholder="Usuario">
+
+        <input
+        type="password"
+        placeholder="Contraseña">
+
+        <button onclick="entrar()">
+            Ingresar
+        </button>
+
+    </div>
+
+</div>
+
+<!-- SISTEMA -->
+
+<div id="sistema"
+class="sistema hidden">
+
+    <div class="top">
+
+        <h2>Mis Tareas</h2>
+
+        <button onclick="agregarTarea()">
+            + Nueva
+        </button>
+
+    </div>
+
+    <div id="lista"></div>
+
+</div>
+
+<script>
+
+    let tareas = [];
+
+    function entrar(){
+
+        document.getElementById("login")
+        .classList.add("hidden");
+
+        document.getElementById("sistema")
+        .classList.remove("hidden");
+    }
+
+    function agregarTarea(){
+
+        let titulo =
+        prompt("Título de la tarea");
+
+        let descripcion =
+        prompt("Descripción");
+
+        tareas.push({
+
+            titulo:titulo,
+
+            descripcion:descripcion
+        });
+
+        mostrar();
+    }
+
+    function mostrar(){
+
+        let lista =
+        document.getElementById("lista");
+
+        lista.innerHTML = "";
+
+        tareas.forEach((tarea)=>{
+
+            lista.innerHTML += `
+
+            <div class="tarea">
+
+                <h3>${tarea.titulo}</h3>
+
+                <p>${tarea.descripcion}</p>
+
+            </div>
+
+            `;
+        });
+    }
+
+</script>
+
+</body>
+
+</html>
