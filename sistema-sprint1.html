@@ -5,32 +5,170 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Sistema de Gestión de Tareas</title>
 <style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:Arial,sans-serif}
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif
+}
 #sistema{
     display:block
 }
-.contenedor{width:95%;max-width:1200px;margin:20px auto}
-.cabecera,.card,.tarea,.formulario{background:#fff;border-radius:10px;box-shadow:0 2px 5px rgba(0,0,0,.1)}
-.cabecera{display:flex;gap:15px;align-items:center;padding:15px}
-.menu{font-size:28px;cursor:pointer}
-h1{flex:1}
-.buscar{padding:10px;width:250px}
-.btn{padding:10px 15px}
-.dashboard{display:grid;grid-template-columns:repeat(3,1fr);gap:15px;margin-top:20px}
-.card{text-align:center;padding:20px}
-.filtros{margin:20px 0}
-.filtros button{padding:10px 15px;margin-right:8px}
-.tarea{display:flex;gap:15px;align-items:center;padding:15px;margin-bottom:10px}
-.info{flex:1}
-.hecha .titulo{text-decoration:line-through;color:gray}
-.menu-lateral{display:none;position:fixed;left:0;top:0;width:240px;height:100%;background:#fff;box-shadow:2px 0 10px rgba(0,0,0,.2)}
-.menu-lateral h2{padding:20px}.cerrar-menu{position:absolute;top:10px;right:15px;font-size:28px;cursor:pointer;font-weight:bold}
-.menu-lateral a{display:block;padding:14px 20px;text-decoration:none;color:#000}
-.menu-lateral a:hover{background:#eee}
-.modal{display:none;position:fixed;inset:0;background:rgba(0,0,0,.4)}
-.formulario{width:420px;margin:60px auto;padding:20px}
-.formulario input,.formulario textarea,.formulario select{width:100%;padding:10px;margin:8px 0}
-.acciones button{margin-left:8px}
+.contenedor{
+width:95%;
+max-width:1200px;
+margin:20px auto
+}
+.cabecera,.card,.tarea,.formulario{
+    background:#fff;
+    border-radius:10px;
+    box-shadow:0 2px 5px rgba(0,0,0,.1)
+}
+.cabecera{
+    display:flex;
+    gap:15px;
+    align-items:center;
+    padding:15px;
+    background:linear-gradient(
+        135deg,
+        #8f7f72,
+        #6d5f54
+    );
+    color:white;
+}
+.menu{
+    font-size:28px;
+    cursor:pointer
+}
+
+h1{
+    flex:1
+}
+
+.buscar{
+    padding:10px;
+    width:250px;
+    border:2px solid #d7c9bb;
+    border-radius:8px;
+}
+.btn{
+    padding:10px 15px;
+    background:#8f7f72;
+    color:white;
+    border:none;
+    border-radius:8px;
+    cursor:pointer;
+}
+.btn:hover{
+    background:#6d5f54;
+}
+.dashboard{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:15px;
+    margin-top:20px
+}
+.card{
+    text-align:center;
+    padding:20px;
+    background:#ffffff;
+    border-left:5px solid #8f7f72;
+}
+.card h3{
+    color:#6d5f54;
+}
+.filtros{
+    margin:20px 0
+}
+.filtros button{
+    padding:10px 15px;
+    margin-right:8px;
+    background:#8f7f72;
+    color:white;
+    border:none;
+    border-radius:8px;
+}
+.filtros button:hover{
+    background:#6d5f54;
+}
+.tarea{
+    display:flex;
+    gap:15px;align-items:center;
+    padding:15px;
+    margin-bottom:10px
+}
+.tarea{
+    border-left:5px solid #8f7f72;
+}
+.info{
+    flex:1
+}
+.hecha .titulo{
+    text-decoration:line-through;
+    color:gray
+}
+.menu-lateral{
+    display:none;
+    position:fixed;
+    left:0;
+    top:0;
+    width:240px;
+    height:100%;
+    background:#8f7f72;
+    color:white;
+    box-shadow:2px 0 10px rgba(0,0,0,.2);
+}
+.menu-lateral h2{
+    padding:20px
+}
+.cerrar-menu{
+    position:absolute;
+    top:10px;right:15px;
+    font-size:28px;cursor:pointer;
+    font-weight:bold
+}
+.menu-lateral a{
+    display:block;
+    padding:14px 20px;
+    text-decoration:none;
+    color:white;
+}
+.menu-lateral a:hover{
+    background:#6d5f54;
+}
+.modal{
+    display:none;
+    position:fixed;
+    inset:0;background:rgba(0,0,0,.4)
+}
+.formulario{
+    width:420px;
+    margin:60px auto;
+    padding:20px;
+    background:#fff;
+    border-top:6px solid #8f7f72;
+}
+
+.formulario button{
+    background:#8f7f72;
+    color:white;
+    border:none;
+    border-radius:8px;
+    padding:10px 15px;
+}
+
+.formulario button:hover{
+    background:#6d5f54;
+}
+
+.formulario input,.formulario textarea,.formulario select{
+    width:100%;
+    padding:10px;
+    margin:8px 0
+}
+.acciones button{
+    margin-left:8px
+    }
 </style>
 </head>
 <body>
