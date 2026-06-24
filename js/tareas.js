@@ -36,6 +36,21 @@ function mostrarTareas(){
         </div>
         `;
     });
+    
+    actualizarDashboard();
+
+}
+
+function actualizarDashboard(){
+
+    document.getElementById("total").textContent =
+    tareas.length;
+
+    document.getElementById("pendientes").textContent =
+    tareas.filter(t => t.estado === "pendiente").length;
+
+    document.getElementById("completadas").textContent =
+    tareas.filter(t => t.estado === "hecha").length;
 
 }
 
@@ -70,6 +85,7 @@ function eliminar(index){
     );
 
     mostrarTareas();
+    cerrarModal();
 }
 
 function cambiarEstado(index){
